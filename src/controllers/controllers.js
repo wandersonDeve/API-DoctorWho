@@ -8,8 +8,21 @@ const getAll = async (req, res) => {
     res.status(500).send({ error: err });
   }
 };
-
+const getById = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const doctor = await doctor.findById(id);
+    if (!doctor) {
+      res.status(400).send({ message: "Doutor não" });
+      return;
+    }
+    return res.send({ doctor });
+  } catch (err) {
+    res.status(500).send({ error: err });
+  }
+};
 
 module.exports = {
-    getAll
-}
+  getAll,
+  getById
+};

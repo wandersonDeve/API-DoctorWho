@@ -1,10 +1,10 @@
 const express = require("express")
 const routes = express.Router()
 
-const DoctorController = require("../controllers/controllers")
-const DoctorMiddleware = require("../middlewares/middlewares")
+const controller = require("../controllers/controllers")
+const middleware = require("../middlewares/middlewares")
 
-routes.get("/doctors", DoctorController.getAll)
-
+routes.get("/doctors", controller.getAll)
+routes.get("/doctors/:id", middleware.validarId, controller.getById)
 
 module.exports = routes
