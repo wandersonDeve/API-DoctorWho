@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Anime = require("../models/AnimeModels");
+const Doctor = require("../models/DoctorModels");
 
 const validarId = async (req, res, next) => {
   const { id } = req.params;
@@ -12,11 +12,11 @@ const validarId = async (req, res, next) => {
 };
 
 try {
-  const anime = await Anime.findById(id);
-  if (!anime) {
-    return res.status(404).send({ msg: "Anime não encontrado" });
+  const doctor = await Doctor.findById(id);
+  if (!doctor) {
+    return res.status(404).send({ msg: "Personagem não encontrado" });
   }
-  res.anime = anime;
+  res.doctor = doctor;
 } catch (err) {
   return res.status(500).send({ error: err });
 }
