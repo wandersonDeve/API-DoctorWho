@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const doctorSchema = new mongoose.Schema({
-  nome: {
+  doctor: {
     type: String,
     require: true,
   },
@@ -9,7 +9,7 @@ const doctorSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  estudio: {
+  seasonImage: {
     type: String,
     require: true,
   },
