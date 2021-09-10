@@ -11,9 +11,9 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
   const id = req.params.id;
   try {
-    const doctor = await doctor.findById(id);
+    const doctor = await Doctor.findById(id);
     if (!doctor) {
-      res.status(400).send({ message: "Doutor não" });
+      res.status(400).send({ message: "Doutor não encontrado" });
       return;
     }
     return res.send({ doctor });
