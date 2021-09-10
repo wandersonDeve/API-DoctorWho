@@ -9,10 +9,6 @@ const doctorSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  seasonImage: {
-    type: String,
-    require: true,
-  },
 });
 
 module.exports = mongoose.model("Doctor", doctorSchema)
