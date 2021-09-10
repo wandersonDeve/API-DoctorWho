@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const connectDatabase = () => {
   mongoose.connect(
-    `process.env.mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`
-  ),
-    {
+    process.env.DATABASE_URI,{
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    };
-};
+    });
+  };
 
 module.exports = connectDatabase;
