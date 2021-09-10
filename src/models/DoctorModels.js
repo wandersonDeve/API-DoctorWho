@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const animeSchema = new mongoose.Schema({
+const doctorSchema = new mongoose.Schema({
   nome: {
     type: String,
     require: true,
   },
-  episodios: {
-    type: Number,
+  ator: {
+    type: String,
     require: true,
   },
   estudio: {
@@ -15,4 +15,4 @@ const animeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Anime", animeSchema)
+module.exports = mongoose.model("Doctor", doctorSchema)
