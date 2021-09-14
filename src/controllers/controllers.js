@@ -71,7 +71,7 @@ const del = async (req, res) => {
   try {
     await res.doctor.remove();
     return res.send({
-      message: "O doutor foi deletado, uma nova regeneração virá em breve",
+      message: "O doutor se foi, uma nova regeneração virá em breve",
     });
   } catch (err) {
     res.status(500).send({ error: err.message });
