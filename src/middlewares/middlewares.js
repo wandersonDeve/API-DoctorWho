@@ -16,7 +16,7 @@ const validarId = async (req, res, next) => {
     }
     res.doctor = doctor;
   } catch (err) {
-    return res.status(500).send({ error: err });
+    return res.status(500).send({ error: err.message });
   }
 
   next();
