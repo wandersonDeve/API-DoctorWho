@@ -1,5 +1,12 @@
 const Doctor = require("../models/DoctorModels");
 
+const home = async (req, res) => {
+  res.status(200).send({
+    message:
+      "acesso as rotas: acessa todos os cadastro do bd - https://api-doctorwho.herokuapp.com/doctors",
+  });
+};
+
 const getAll = async (req, res) => {
   try {
     const doctor = await Doctor.find();
@@ -120,6 +127,7 @@ const filterAll = async (req, res) => {
 };
 
 module.exports = {
+  home,
   getAll,
   getById,
   create,

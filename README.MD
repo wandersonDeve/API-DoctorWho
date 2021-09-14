@@ -36,7 +36,7 @@ Você pode utilizar as ferramentas:
 
 Exemplos de URLs: 
 * Essa é a URL de teste padrão: http://localhost:8080/doctors
-* Para buscar por ID, Editar ou Apagar, insira o ID na URL: http://localhost:8080/doctors/5
+* Para buscar por ID, Editar ou Apagar, insira o ID na URL: http://localhost:8080/doctors/9
 * Para fazer uma busca com query string, esse é um exemplo de URL: http://localhost:8080/doctors/filter?ator=Smitt
 
 Essa é a estrutura JSON para fazer o POST e o PUT:
