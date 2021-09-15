@@ -84,24 +84,6 @@ const del = async (req, res) => {
     res.status(500).send({ error: err.message });
   }
 };
-const filterByName = async (req, res) => {
-  const ator = req.query.ator;
-  if (!ator) {
-    res.status(400).send({ message: "Busca não encontrada" });
-    return;
-  }
-
-  try {
-    const doctor = await Doctor.find({
-      ator: {
-        $regex: `${ator}`,
-      },
-    });
-    res.send({ ator });
-  } catch (err) {
-    res.status(500).send({ error: err.message });
-  }
-};
 const filterAll = async (req, res) => {
   let { ator, doctor, imageSeason } = req.query;
 
@@ -133,6 +115,5 @@ module.exports = {
   create,
   update,
   del,
-  filterByName,
   filterAll,
 };
