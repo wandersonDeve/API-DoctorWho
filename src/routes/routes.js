@@ -17,16 +17,16 @@ routes.delete("/doctor/:id", middleware.validarId, controller.del);
 routes.get("/filterAll", controller.filterAll);
 
 routes.all("*", (req, res) => {
-    res.status(404).send({ message: "Endpoint was not found" });
+  res.status(404).send({ message: "Endpoint was not found" });
+});
+
+routes.use((error, req, res, next) => {
+  res.status(error.status || 500).send({
+    error: {
+      status: error.status || 500,
+      message: error.message || "Internal Server Error",
+    },
   });
-  
-  routes.use((error, req, res, next) => {
-    res.status(error.status || 500).send({
-      error: {
-        status: error.status || 500,
-        message: error.message || "Internal Server Error",
-      },
-    });
-  });
+});
 
 module.exports = routes;
